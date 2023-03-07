@@ -211,7 +211,20 @@ cat part1.txt | tail -n 1               # pipes text but outputs only last line 
 
 
 
-# Video 12 of 20
+# Video 12 of 20 Modify File Permissions
+ls -l
+# changes the user who owns the file 
+sudo chown root newfile.txt             
+-rw-rw-rw- 1 vscode root 0 Mar  7 14:57 newFile.txt
+-rw-rw-rw- 1 root   root   0 Mar  7 14:57 newFile.txt
+
+# changes the group who owns the file
+sudo chown :root newFile.txt
+example:
+$ sudo chown :vscode newFile.txt
+$ sudo chown :root newFile.txt
+-rw-rw-rw- 1 root   vscode   0 Mar  7 14:57 newFile.txt
+-rw-rw-rw- 1 root   root   0 Mar  7 14:57 newFile.txt
 
 
 
