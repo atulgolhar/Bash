@@ -199,13 +199,19 @@ cat part1.txt part2.txt > paragraph.txt         # take text from part1.text and 
 
 # Pipeline
 ls -l /usr/bin | less                   # redirect long output into less to get the functionality of less (thus allowing scroll by spacebar)
+ls -l /usr/bin | grep echo              # redirect /usr/bin long output into echo and then grep (search) for echo
+                                        # takes output from ls command and passes along the pipeline to the grep command
+                                        
+ls -l /usr/bin | grep echo | sort       # further pipe this output to another command like sort (but notice you lose the highlighting b/c now sort controls the text)
+
+# using Pipeline with Tail and Head command
+cat part1.txt | head -n 1               # pipes text but outputs only 1 line
+cat part1.txt | tail -n 1               # pipes text but outputs only last line in file
 
 
 
 
-
-
-
+# Video 12 of 20
 
 
 
