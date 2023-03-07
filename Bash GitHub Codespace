@@ -1,6 +1,6 @@
 #  notes for bash GitHub Codespaces (cloud based terminal to practice)
 
-In GitHub, on your repository, Code, Codespaces, and GitHub lauches a dev environment.
+In GitHub, on your repository, Code, Codespaces, and GitHub lauches a dev environment. What is it? VS code in the browswer.
 
 ls -l
 code while_loop
