@@ -1,0 +1,103 @@
+#  notes for bash GitHub Codespaces (cloud based terminal to practice)
+
+ls -l
+code while_loop
+
+CTRL ~          # to open terminal in Git Codespaces
+help cd         # partial info, standalone line
+cd --help       # partial info, used when in the middle of a line of code but need help (so dont need to delete the written code)
+pwd --help
+/EXAMPLE        # to search
+man cd          # full info which opens a text file 
+
+Azure:        cd --help       # also works for Azure
+
+pwd
+whoami
+cd ~
+cd /workspaces/bash-for-beginners
+tree            # offers tree view with directories ~-1-2-3
+cd 1/           # cd into 1
+cd 2/3          # cd into 3
+cd ../..        # to jump from 3 back into 2 back into 1
+pushd 2/3       # cd into 3
+popd
+
+# to look at the stack 1/2/3
+// 0  ~/1/2/3
+// 1  ~/1
+
+# sitting inside 3 but want to popd (pop directories)
+~1/2/3  $ popd            # want to pop off last directory that was added, thus takes you to ~/1
+~/1
+        $ dirs -v
+0 ~/1   $
+
+ls -l
+ls -a
+ls S*           # greps all files with S
+ls [CS]*        # greps any file or foler that begins with C or S 
+ls *.md         # greps any file with a md extension
+ls *.??         # returns two characters
+ls *.???        # returns three characters
+ls [[:upper:]]*         # greps any file with upper case characters followed any characters
+touch Text1file.txt     # creates text file
+ls [[:lower:]]*         # returns any file with lower case character
+
+
+# whereis, which, find
+whereis bash
+whereis -b bash                 # returns binaries, source files, and 
+which bash                      # returns executables
+find . -name "*.md"             # retuns list of of all markdown files in current workspace using .
+find /home -name file.txt       # find files with expressions or names
+find /home -iname file.txt      # find files outside the current working directory that you are in
+find . -type d                  # type directory
+find . -type f                  # type files
+
+#mkdir
+mkdir project01 project 02 project03
+mkdir -p projects01/sub1/sub2
+
+#touch
+touch project01/file.txt
+
+#mv
+mv project01/file.txt project02
+ls project02
+
+#cp
+cp project02/file.txt project01/file400.txt             # copy file to new folder and change file name
+ls project01
+cp project02/file.txt project01/                        # '/' not necessary
+
+#cleanup now, use rm remove
+rm file*                                        # wildcard to remove all file*
+rmdir sub1/                                     # need to remove the lowest path if use rmdir without any options
+rmdir sub1*
+rmdir project*                                  # removes all project directories as long as those directories are empty
+
+#cat
+cat quotes01.txt                                # concatenate file contents
+cat quotes02.txt quotes02.txt                   # returns all quotes from both files
+head fake001.log                                # returns first 10 lines
+head -n 3 fake001.log                           # able to specify how many lines returned. Here returns first 3 lines
+tail fake001.log                                # returns last 10 lines by default
+tail -n 3 fake001.log                           # returns last 3 lines
+less --help                                     # inline help function called. Uses summary of man page
+
+grep --help
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
