@@ -110,7 +110,29 @@ grep "DELETE" fake002.log
 
 // Video 10 of 20
 
-# environment variables
+# environment variables                         # must know b/c applications, command line tools and shell scripts use envir variables to determine configuration
+
+env
+env $SHELL                                      # location of the shell
+env $HOME                                       # location of the directory of the current user
+env $USER
+env $PATH                                       # locations to executables
+export --help                                   # to create a new env variable (ie to set export attributes for shell variables)
+export newVar=value
+env                                             # pulls up env then search for newVar
+
+# how to persist environment variables across sessions?         # startup files
+ls /etc/profile                                 # global configuration which is located under /etc/profile 
+                                                # if make changes to this file then it affects every user logged into this machine 
+                                                # or every user logged into the bash session
+                                                
+ls -a ~                                         # (1) look for the .profile which exists under the user's home directory
+                                                # so here we ls -a the home directory of this VS code user, then we will see a .profile 
+                                                # that was created by this codespace that has a number of options in there that is configuring this session.
+                                                # (2) also look for the .bashrc file.
+                                                # Each of (1) and (2) are loaded into the session when you start a new prompt or bash session,
+                                                # so if you put the export command inside one of those files, it would be automatically loaded and shared 
+                                                # and persisted across your different sessions.
 
 
 
