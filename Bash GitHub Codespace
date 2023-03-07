@@ -187,3 +187,27 @@ and 2>&3 will redirect file descriptor 2 to 3 which is STDOUT.
 >name means redirect output to file name
 >&number means redirect output to file descriptor number
 the & is needed to tell the shell you mean a file descriptor, not a file name
+
+
+# to redirect BOTH the stdin and stderror to the SAME file
+ls -l >>error.txt 2>&1                          # note 2 is the stderror and 1 is the stdout. Must use this syntax with the fd's 1 and 2.
+
+# Redirection
+cat paragraph.txt       # empty
+cat part1.txt part2.txt > paragraph.txt         # take text from part1.text and part2.text and put into paragraph.txt file
+
+
+# Pipeline
+ls -l /usr/bin | less                   # redirect long output into less to get the functionality of less (thus allowing scroll by spacebar)
+
+
+
+
+
+
+
+
+
+
+
+
