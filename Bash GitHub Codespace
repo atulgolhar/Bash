@@ -136,10 +136,54 @@ ls -a ~                                         # (1) look for the .profile whic
 
 
 
+# Video 11 of 20
+# using redirection and pipelines in Bash       # redirection will overwrite vs append will only append and not overwrite
+# you see on the screen is the Standard Output.
 
+s -l
+ls -l > output.txt                      # redirect std output to new file called output.txt (actually called output10.txt in my session).
+cat output.txt
+ls -l >> output.txt                     # append the text to the existing file (and not override the existing text)
+                                        # thus single > is redirect
+                                        #      double >> is append to existing file
+                                        
+# STREAM std output is one the stream presented to the terminal
+# STREAM std error is another stream presented to the terminal
 
+stdin - standard input or stdin device to give commands is the keyboard 
+stdout - standard output or stdout device is your terminal screen
+stderr - standard error "2"
+redirection - you can change the standard input/output. 
 
+# Output Redirection  ">"
+$ ls -al > listings 
+$ cat file.text > /exampleFolder1/exampleSubFolder1/file10.txt
+$ cat music.mp3 > /dev/audio
 
+# Input Redirection   "<"
+“>” is the output redirection operator. “>>” appends output to an existing file
+“<” is the input redirection operator
+“>&” redirects output of one file to another
 
+ & is needed to tell the shell you mean a file descriptor, not a file name.
 
+The numbers are file descriptors and only the first three (starting with zero) have a standardized meaning:
 
+File Descriptors = #
+0 - stdin
+1 - stdout
+2 - stderr              # to redirect the stderr you must add the fd (File Descriptor) to the front of the Operator
+So each of these numbers in your command refer to a file descriptor. 
+
+You can either redirect a file descriptor to a file with >                      // so here need a file name
+or 
+redirect it to another file descriptor with >&                                  // so here need a file descriptor value
+
+The 3>&1 in your command line will create a new file descriptor and 
+redirect it to 1 which is STDOUT. 
+Now 1>&2 will redirect the file descriptor 1 to STDERR 
+and 2>&3 will redirect file descriptor 2 to 3 which is STDOUT.
+
+>name means redirect output to file name
+>&number means redirect output to file descriptor number
+the & is needed to tell the shell you mean a file descriptor, not a file name
