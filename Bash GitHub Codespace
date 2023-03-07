@@ -213,12 +213,12 @@ cat part1.txt | tail -n 1               # pipes text but outputs only last line 
 
 # Video 12 of 20 Modify File Permissions
 ls -l
-# changes the user who owns the file 
+# changes the user who owns the file
 sudo chown root newfile.txt             
 -rw-rw-rw- 1 vscode root 0 Mar  7 14:57 newFile.txt
 -rw-rw-rw- 1 root   root   0 Mar  7 14:57 newFile.txt
 
-# changes the group who owns the file
+# changes the group who owns the file --> use the : for the group
 sudo chown :root newFile.txt
 example:
 $ sudo chown :vscode newFile.txt
@@ -226,6 +226,20 @@ $ sudo chown :root newFile.txt
 -rw-rw-rw- 1 root   vscode   0 Mar  7 14:57 newFile.txt
 -rw-rw-rw- 1 root   root   0 Mar  7 14:57 newFile.txt
 
+# another way to change group
+$ sudo chgrp root newFile.txt
+-rw-rw-rw- 1 root   vscode   0 Mar  7 14:57 newFile.txt
+-rw-rw-rw- 1 root   root   0 Mar  7 14:57 newFile.txt
+
+# to Modify Permissions of a file
+chmod
+chmod +x script.sh
+ls -l script.sh
+
+# to execute a script
+$ ./script.sh
+
+#Octal Format
 
 
 
