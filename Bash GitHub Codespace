@@ -1,11 +1,11 @@
 #  notes for bash GitHub Codespaces (cloud based terminal to practice)
 
 In GitHub, on your repository, Code, Codespaces, and GitHub lauches a dev environment. What is it? VS code in the browswer.
-
+Theme: Light+
+CTRL ~          # to open terminal in Git Codespaces
 ls -l
 code while_loop
 
-CTRL ~          # to open terminal in Git Codespaces
 help cd         # partial info, standalone line
 cd --help       # partial info, used when in the middle of a line of code but need help (so dont need to delete the written code)
 pwd --help
@@ -57,9 +57,11 @@ find /home -iname file.txt      # find files outside the current working directo
 find . -type d                  # type directory
 find . -type f                  # type files
 
+// Video 8 of 20 
 #mkdir
+mkdir project01 project02 project03 project04
 mkdir project01 project 02 project03
-mkdir -p projects01/sub1/sub2
+mkdir -p projects01/sub1/sub2                   # --parent  will make the parent directory as needed
 
 #touch
 touch project01/file.txt
@@ -73,7 +75,7 @@ cp project02/file.txt project01/file400.txt             # copy file to new folde
 ls project01
 cp project02/file.txt project01/                        # '/' not necessary
 
-#cleanup now, use rm remove
+#cleanup now, use rm remove or rmdir
 rm file*                                        # wildcard to remove all file*
 rmdir sub1/                                     # need to remove the lowest path if use rmdir without any options
 rmdir sub1*
@@ -81,7 +83,7 @@ rmdir project*                                  # removes all project directorie
 
 #cat
 cat quotes01.txt                                # concatenate file contents
-cat quotes02.txt quotes02.txt                   # returns all quotes from both files
+cat quotes01.txt quotes02.txt                   # returns all quotes from both files
 head fake001.log                                # returns first 10 lines
 head -n 3 fake001.log                           # able to specify how many lines returned. Here returns first 3 lines
 tail fake001.log                                # returns last 10 lines by default
@@ -89,17 +91,7 @@ tail -n 3 fake001.log                           # returns last 3 lines
 less --help                                     # inline help function called. Uses summary of man page
 
 grep --help
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
+Video 8 f 20
+
+
