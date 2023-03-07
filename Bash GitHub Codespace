@@ -57,8 +57,10 @@ find /home -iname file.txt      # find files outside the current working directo
 find . -type d                  # type directory
 find . -type f                  # type files
 
-// Video 8 of 20 
-#mkdir
+
+
+// Video 8 of 20
+# mkdir
 mkdir project01 project02 project03 project04
 mkdir project01 project 02 project03
 mkdir -p projects01/sub1/sub2                   # --parent  will make the parent directory as needed
@@ -66,32 +68,56 @@ mkdir -p projects01/sub1/sub2                   # --parent  will make the parent
 #touch
 touch project01/file.txt
 
-#mv
+# mv
 mv project01/file.txt project02
 ls project02
 
-#cp
+# cp
 cp project02/file.txt project01/file400.txt             # copy file to new folder and change file name
 ls project01
 cp project02/file.txt project01/                        # '/' not necessary
 
-#cleanup now, use rm remove or rmdir
+# cleanup now, use rm remove or rmdir
 rm file*                                        # wildcard to remove all file*
 rmdir sub1/                                     # need to remove the lowest path if use rmdir without any options
 rmdir sub1*
 rmdir project*                                  # removes all project directories as long as those directories are empty
 
-#cat
+
+
+// Video 9 of 20
+
+# cat 
 cat quotes01.txt                                # concatenate file contents
 cat quotes01.txt quotes02.txt                   # returns all quotes from both files
-head fake001.log                                # returns first 10 lines
+
+# head
+head fake001.log                                # returns first 10 lines by default
 head -n 3 fake001.log                           # able to specify how many lines returned. Here returns first 3 lines
+head -n 5 fake001.log                           # returns first 5 lines from log file
 tail fake001.log                                # returns last 10 lines by default
 tail -n 3 fake001.log                           # returns last 3 lines
+more fake002.log                                # returns text from that file in a page by page format
 less --help                                     # inline help function called. Uses summary of man page
+                                                # to use, type / then items you are searching for
 
+# grep                                          # can use Regular Expressions to further refine your search
 grep --help
+grep "174.212.2.233" fake002.log
+grep "DELETE" fake002.log
 
-Video 8 f 20
+
+
+// Video 10 of 20
+
+# environment variables
+
+
+
+
+
+
+
+
 
 
