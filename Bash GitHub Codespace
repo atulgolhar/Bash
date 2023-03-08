@@ -238,9 +238,56 @@ ls -l script.sh
 
 # to execute a script
 $ ./script.sh
+                                                                owner           group           others
+#Octal Format                                                    r  w  x        r  w  x         r  w  x
+chmod +x script.sh              # chmod 664 script.sh           (4)(2)(1)       (4)(2)(1)       (4)(2)(1)
+ls -l script.sh
+./script.sh                     # to run script
 
-#Octal Format
 
 
+# Video 13 of 20 Bash Script
+what-is-a-bash-script  >  $ hello_world
+
+#!/bin/bash                     shbang used to tell the environment what we are using
+
+# A script that will print out a message
+
+echo 'Hello, World!'
 
 
+echo $PATH             # note that bash directory is not listed inside the video's programmer path
+➜ /workspaces/bash-for-beginners/what-is-a-bash-script (main) $ echo $PATH
+/vscode/bin/linux-x64/92da9481c0904c6adfe372c12da3b7748d74bdcb/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/vscode/.local/bin
+
+# since bash is not listed int he $PATH, we will need to use the explicit path
+./hello_world
+# Permission denied
+# thus need to update the permissions
+# thus need to see the permissions of the script
+$ ls -l hello_world
+-rw-rw-rw- 1 vscode root 69 Mar  8 02:37 hello_world
+$ chmod 700 hello_world
+-rwx------ 1 vscode root 69 Mar  8 02:37 hello_world
+# so now x permission does exist
+$ ./hello_world
+Hello World!
+# lets print out the $PATH variable and see which directories we have available to us (ie those directories listed in the $PATH)
+➜ /workspaces/bash-for-beginners/what-is-a-bash-script (main) $ echo $PATH
+/vscode/bin/linux-x64/92da9481c0904c6adfe372c12da3b7748d74bdcb/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/vscode/.local/bin
+# for use scope scripts that you want to run, its a good idea to place them in a local bin on your home directory.
+# see last bin listed...
+/home/vscode/.local/bin
+# but local does not yet exist so we need to create it
+$ mkdir -p /home/vscode/.local/bin
+# now we see it exists...
+$ ls /home/vscode/.local
+bin
+
+cp hello_world /home/vscode/.local/bin          # copy file into that directory
+$ hello_world                                   # now if we run it this way
+Hello World!                                    # yes, it runs and prints out. Why? b/c the script lives inside our directory and our directory sits 
+                                                # inside the $PATH environment variable
+
+
+# Video 14 Variables in Bash
