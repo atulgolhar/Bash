@@ -291,3 +291,15 @@ Hello World!                                    # yes, it runs and prints out. W
 
 
 # Video 14 Variables in Bash
+
+
+#!/bin/bash
+
+# A script that will print out a message from a variable
+
+echo ‘Hello World!’
+
+# using chmod allowed variable to become executable. Then able to call it from an explicit path:
+
+(main) $ ./hello_variable
+
