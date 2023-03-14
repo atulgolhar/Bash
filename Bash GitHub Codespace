@@ -325,3 +325,7 @@ two=2
 
 check_even $number $two                                 # passing in a variable. check_even is $0, $number is $1, $two is $2.
 echo "The value of $mod is outside of function: "
+
+
+# to run, in Codespace Terminal, check executable permissions.
+$ chmod 700 add_numbers                                 # change permissions
