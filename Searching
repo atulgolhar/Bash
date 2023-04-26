@@ -1,0 +1,7 @@
+for i in $(ls -d */); do echo ${i%%/}; done
+
+ls -d */
+
+for i in $(ls -d *Python*/); do echo ${i%%/}; done
+for i in $(ls -d  Python*/); do echo ${i%%/}; done
+for i in $(ls -d *Python /); do echo ${i%%/}; done
